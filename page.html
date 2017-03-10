@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<title>
+  My Attempt at websiting
+</title>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	
+    <LINK REL=Stylesheet HREF="page.css" Type="text/css">
+
+    <body>
+		<div id="container">
+			<div id="options">
+				<button class="buttons" id="clearCanvas">Clear Canvas</button>
+				<button class="buttons" id="changeCanvas">Modify Canvas</button>
+				
+				<ul>
+					<li>
+						<input class="radioButton" checked="checked" type="radio" name="color" id="black"><label color: "black" for="black">Black</label>
+					</li>
+					
+					<li>
+						<font color="red"><input class="radioButton" type="radio" name="color" id="red"><label color: "red" for="red">Red</label></font>
+					</li>
+					
+					<li>
+						<font color="orange"><input class="radioButton" type="radio" name="color" id="orange"><label for="orange">Orange</label></font>
+					</li>
+					
+					<li>
+						<font color="yellow"><input class="radioButton" type="radio" name="color" id="yellow"><label for="yellow">Yellow</label></font>
+					</li>
+					
+					<li>
+						<font color="green"><input class="radioButton" type="radio" name="color" id="green"><label for="green">Green</label></font>
+					</li>
+					
+					<li>
+						<font color="blue"><input class="radioButton" type="radio" name="color" id="blue"><label for="blue">Blue</label></font>
+					</li>
+					
+					<li>
+						<font color="indigo"><input class="radioButton" type="radio" name="color" id="indigo"><label for="indigo">Indigo</label></font>
+					</li>
+					
+					<li>
+						<font color="violet"><input class="radioButton" type="radio" name="color" id="violet"><label for="violet">Violet</label></font>
+					</li>
+					
+					<li>
+						<input class="radioButton" type="radio" name="color" id="rainbow"><label id="rainbowLabel" for="rainbow">Rainbow</label>
+					</li>
+					
+				</ul>
+				
+				<input type="checkbox" id="overwrite"><label id="overwriteLabel" for="overwrite">Overwrite colors</label>
+				<input type="checkbox" id="displayGrid"><label id="displayLabel" for="displayGrid">Display Grid</label>
+			</div>
+			
+			<div id="grid">
+			</div>
+			
+			<div id="gridDialog" title = "Please enter desired grid size">
+				Rows: <input class="dialogInput" id="heightInput" type="number" />
+				Columns: <input class="dialogInput" id="widthInput" type="number" />
+				<button class="dialogButton" id="dialogOK">"OK"</button>
+				<button class="dialogButton" id="dialogCancel">"Cancel"</button>
+			</div>
+		</div>
+    </body>
+  </head>
+
+</html>
