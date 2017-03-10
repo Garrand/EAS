@@ -17,7 +17,7 @@
 		<div id="container">
 			<div id="options">
 				<button class="buttons" id="clearCanvas">Clear Canvas</button>
-				<button class="buttons" id="changeCanvas">Modify Canvas</button>
+				<button class="buttons" id="modifyCanvas">Modify Canvas</button>
 				
 				<ul>
 					<li>
@@ -65,11 +65,11 @@
 			<div id="grid">
 			</div>
 			
-			<div id="gridDialog" title = "Please enter desired grid size">
-				Rows: <input class="dialogInput" id="heightInput" type="number" />
-				Columns: <input class="dialogInput" id="widthInput" type="number" />
-				<button class="dialogButton" id="dialogOK">"OK"</button>
-				<button class="dialogButton" id="dialogCancel">"Cancel"</button>
+			<div id="gridDialog" title = "Enter grid width">
+				<span id="dialogInput">Size <input class="numbox" min="1" value="64" id="sizeInput" type="number"></span>
+				
+				<button class="dialogButton" id="dialogOK">OK</button>
+				<button class="dialogButton" id="dialogCancel">Cancel</button>
 			</div>
 		</div>
     </body>

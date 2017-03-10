@@ -2,6 +2,15 @@ $(document).ready(function()
 {
 	var currentColor = "black";
 	var rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+	
+	$(function(){
+		$("#gridDialog").dialog({
+			autoOpen: false,
+			show: {effect:"fold", duration:"250"},
+			hide: {effect:"explode", duration:"250"}
+		});
+	});
+	
 	var rainbowize = function($word)
 	{
 		console.log("rainbowize " + $word.text());
@@ -25,15 +34,18 @@ $(document).ready(function()
 		console.log("final word " + $word.text());
 	}
 	
-	rainbowize($("#rainbowLabel"));
-	
 	var buildGrid = function(width)
 	{
-		var numblocks = ($("#grid").height() * $("#grid").width()) / (width * width);
-		console.log(numblocks);
+		$(".block").remove();
+		
+		var blockSize = $("#grid").width() / width;
+		console.log("blockSize " + blockSize);
+		
+		var numblocks = ($("#grid").height() * $("#grid").width()) / (blockSize * blockSize);
+		console.log("numblocks " + numblocks);
 		
 		var $block = $("<div class='block'/>");
-		$block.css({"height":width, "width":width});
+		$block.css({"height":blockSize, "width":blockSize});
 		
 		for( i=0; i<numblocks; i++)
 		{
@@ -57,10 +69,13 @@ $(document).ready(function()
 		$block.css("background", color);
 	}
 	
-	buildGrid(10);
+	rainbowize($("#rainbowLabel"));
+	buildGrid(64);
 	
-	$(".block").mouseenter(function ()
+	$(document).on("mouseenter", ".block", function ()
 	{
+		console.log("mouse entered");
+		
 		if(!$("#overwrite").is(":checked"))
 		{			
 			if($(this).css("background-color") != "rgb(255, 255, 255)")
@@ -83,6 +98,11 @@ $(document).ready(function()
 		$(".block").css("background", "white");
 	});
 	
+	$("#modifyCanvas").click(function()
+	{
+		$("#gridDialog").dialog("open");
+	});
+	
 	$(".radioButton").click(function()
 	{
 		currentColor = $(this).attr("id");
@@ -98,6 +118,18 @@ $(document).ready(function()
 		{
 			$(".block").css({"outline": "none"});
 		}
+	});	
+	
+	$("#dialogOK").click(function()
+	{
+		console.log($("#sizeInput").val());
+		resetGrid();
+		buildGrid($("#sizeInput").val());
+		$("#gridDialog").dialog("close");
 	});
 	
+	$("#dialogCancel").click(function()
+	{
+		$("#gridDialog").dialog("close");
+	});
 });

@@ -58,19 +58,22 @@ ul
 
 #gridDialog
 {
-	display: none;	
 }
 
 .dialogInput
 {
+	display: block;
+}
+
+.numbox
+{
 	width: 50px;
-	margin: 0px auto;
-	display: inline-block;
 }
 
 .dialogButton
 {
 	display: inline-block;
+	margin-top: 5px;
 }
 
 .block
