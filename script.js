@@ -70,7 +70,8 @@ $(document).ready(function()
 	}
 	
 	rainbowize($("#rainbowLabel"));
-	buildGrid(64);
+	rainbowize($("#title"));
+	buildGrid(80);
 	
 	$(document).on("mouseenter", ".block", function ()
 	{

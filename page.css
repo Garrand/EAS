@@ -1,26 +1,33 @@
+h1
+{
+	text-align: center;
+}
+
 #container
 {
 	background: #777777;
 	outline: 1px solid;
-	display: inline-block;
+	display:inline-block;
+	margin: 0px auto;
 }
 
 #grid
 {
 	width: 800px;
 	height: 800px;
-	display: inline-block;
 	outline: 1px solid;
 	margin: 0px;
+	float: right;
 }
 
 #options
 {
 	margin: 0px;
 	width:150px;
-	display: inline-block;
 	vertical-align: top;
-	
+	display:inline-block;
+	outline: 1px solid;
+	background: teal;
 }
 
 .rainbow {
